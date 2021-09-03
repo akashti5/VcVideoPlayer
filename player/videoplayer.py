@@ -30,7 +30,7 @@ async def stream(client, m: Message):
             await group_call.start(chat_id)
             await group_call.set_video_capture(video)
             VIDEO_CALL[chat_id] = group_call
-            await msg.edit("**▶️ Started Streaming!**")
+            await msg.edit("**▶️ Started Your Video 🥳!**")
         except Exception as e:
             await msg.edit(f"**Error** -- `{e}`")
     else:
@@ -41,6 +41,6 @@ async def stopvideo(client, m: Message):
     chat_id = m.chat.id
     try:
         await VIDEO_CALL[chat_id].stop()
-        await m.reply("**⏹️ Stopped Streaming!**")
+        await m.reply("**⏹️ Stopped Streaming Left Voice Chat!**")
     except Exception as e:
         await m.reply(f"**🚫 Error** - `{e}`")
